@@ -1,4 +1,239 @@
-% chapter 0 : structure
+% chapter 1 : structure
 \chapter{Struktur}
 
-Dies ist ein Test!
+Inhalt.
+
+\section{\"{U}bersicht}
+% tikzpic from [drive N:] to [Lehrveranstaltungen] 
+\begin{tikzpicture}[node distance = 1.5cm, auto]
+  % 1st level nodes
+  \node [root] (drive) {Laufwerk N:};
+  \node [root, below of=drive] (parent) {Bauer-Studienassistenten};
+  \node [virtualnode, below of=parent] (vn) {};
+  \node [sdir, right of=vn, node distance = 3cm] (admin) 
+   {Administratives};
+  \node [sdir, below of=admin] (bauer) {Bauer};
+  \node [sdir, below of=bauer] (lvs) {Lehrveranstaltungen};
+  \node [sdir, below of=lvs] (sicherung) {Sicherungen Archiv};
+  \node [sdir, below of=sicherung] (sonst) {Sonstiges};
+  \node [sdir, below of=sonst] (studis) {StudienassistentInnen-Privat};
+  \node [sdir, below of=studis] (tc) {TeachCenter};
+  \node [sdir, below of=tc] (ulz) {ULZ};
+  % 1st level edges
+  \path [line] (drive) -- (parent);
+  \path [line] (parent) |- (admin);
+  \path [line] (parent) |- (bauer);
+  \path [line] (parent) |- (lvs);
+  \path [line] (parent) |- (sicherung);
+  \path [line] (parent) |- (sonst);
+  \path [line] (parent) |- (studis);
+  \path [line] (parent) |- (tc);
+  \path [line] (parent) |- (ulz);
+  %
+  % 2nd level nodes
+  \node [description, right of=admin, node distance=5cm] (stunden)
+   {Studenliste, Studienassistenz};
+  \node [obsolete, right of=bauer, node distance=5cm] (unbauer)
+   {unwichtig};
+  \node [description, right of=lvs, node distance=5cm] (wichtiglvs)
+   {Genaueres\\ im Folgenden};
+  \node [obsolete, right of=sicherung, node distance=5cm] (unsicherung)
+   {unwichtig};
+  \node [obsolete, right of=sonst, node distance=5cm] (unsonst)
+   {unwichtig};
+  \node [description, right of=studis, node distance=5cm] (ordner)
+   {Eigener Ordner, Diverses};
+  \node [description, right of=tc, node distance=5cm] (wichtigtc)
+   {Guide zum TC\\ Alte Daten};
+  \node [obsolete, right of=ulz, node distance=5cm] (unulz)
+   {unwichtig};
+  % 2nd level edges
+  \path [line] (admin) -- (stunden);
+  \path [line] (bauer) -- (unbauer);
+  \path [line] (lvs) -- (wichtiglvs);
+  \path [line] (sicherung) -- (unsicherung);
+  \path [line] (sonst) -- (unsonst);
+  \path [line] (studis) -- (ordner);
+  \path [line] (tc) -- (wichtigtc);
+  \path [line] (ulz) -- (unulz);
+\end{tikzpicture}
+
+\section{Ordner Lehrveranstaltungen}
+% tikzpic from [Lehrveranstaltungen] to [Formelsammlung]/[Uebung] 
+\begin{tikzpicture}[node distance = 1.5cm, auto]
+  % 1st level nodes
+  \node [root] (parent) {Lehrveranstaltungen};
+  \node [virtualnode, below of=parent] (vn) {};
+  \node [ldir, right of=vn, node distance=4cm] (kmech)
+   {Unterlagen\_Kontinuumsmechanik};
+  \node [ldir, below of=kmech] (material) {Unterlagen\_Materialtheorie};
+  \node [ldir, below of=material] (dynamik) {Unterlagen\_Dynamik};
+  % 1st level edges
+  \path [line] (parent) |- (dynamik);
+  \path [line] (parent) |- (kmech);
+  \path [line] (parent) |- (material); %| vline to disable odd look in emacs
+  %
+  % 2nd level nodes
+  \node [obsolete, right of=kmech, node distance=6cm] (unkmech)
+   {unwichtig};
+  \node [obsolete, right of=material, node distance=6cm] (unmaterial)
+   {unwichtig};
+  \node [virtualnode, below of=dynamik] (vndyn) {};
+  \node [ldir, right of=vndyn, node distance=3.5cm] (formel)
+   {Formelsammlung\_Dynamik};
+  \node [ldir, below of=formel] (uebung) {\"{U}bungsblaetter\_Dynamik} ;
+  \node [ldir, below of=uebung] (org) {LV\_Organisation};
+  % 2nd level edges
+  \path [line] (kmech) |- (unkmech);
+  \path [line] (material) |- (unmaterial);
+  \path [line] (dynamik) |- (formel);
+  \path [line] (dynamik) |- (uebung);
+  \path [line] (dynamik) |- (org); %| vline to disable odd look in emacs
+  %
+  % 3rd level nodes
+  \node [description, right of=formel, node distance=5.5cm] (wichtigformel)
+   {Genaueres\\ im Folgenden};
+  \node [description, right of=uebung, node distance=5.5cm] (wichtiguebung)
+   {Genaueres\\ im Folgenden};
+  \node [virtualnode, below of=org] (vnorg) {};
+  \node [ldir, right of=vnorg, node distance=3.5cm] (archiv)
+   {Archiv};
+  \node [obsolete, below of=archiv] (unarchiv) {unwichtig};
+  \node [ldir, below of=unarchiv] (aktuell) {Aktuelle\_Lehrveranstaltung};
+  % 3rd level edges
+  \path [line] (formel) |- (wichtigformel);
+  \path [line] (uebung) |- (wichtiguebung);
+  \path [line] (archiv) -- (unarchiv);
+  \path [line] (org) |- (archiv);
+  \path [line] (org) |- (aktuell); %| vline to disable odd look in emacs
+  %
+  % 4th level nodes
+  \node [virtualnode, below of=aktuell] (vnaktuell) {};
+  \node [filemisc, left of=vnaktuell, node distance=3.5cm] (beurteilung)
+   {Beurteilungslisten};
+  \node [filemisc, below of=beurteilung] (modal) {Pr\"{u}fungsmodalit\"{a}ten};
+  \node [filemisc, below of=modal] (plan) {Studenplan};
+  \node [filemisc, below of=plan] (teilnehmer) {Teilnehmerlisten};
+  \node [filemisc, below of=plan] (abgabe) {\"{U}bungsblattabgabe};
+  % 4th level edges
+  \path [line] (aktuell) |- (beurteilung);
+  \path [line] (aktuell) |- (modal);
+  \path [line] (aktuell) |- (plan);
+  \path [line] (aktuell) |- (teilnehmer);
+  \path [line] (aktuell) |- (abgabe); %| vline to disable odd look in emacs
+\end{tikzpicture}
+
+\section{Ordner Formelsammlung\_Dynamik}
+% tikzpic for [Formelsammlung_Dynamik] 
+\begin{tikzpicture}[node distance = 1.5cm, auto]
+  % 1st level nodes
+  \node [root] (parent) {Formelsammlung\_Dynamik};
+  \node [virtualnode, below of=parent] (vn) {};
+  \node [filemisc, right of=vn, node distance = 4.5cm] (fsalt) 
+   {Alte\\ Formelsammlungen};
+  \node [ldir, below of=fsalt] (fs13) {Vorlesungsbehelf\_2013\_2014};
+  \node [ldir, below of=fs13] (fs14) {Vorlesungsbehelf\_2014\_2015};
+  \node [ldir, below of=fs14] (fs15) {Vorlesungsbehelf\_2015\_2016};
+  \node [ldir, below of=fs15] (fsaktuell) {Vorlesungsbehelf\_yyyy\_zzzz};
+  % 1st level edges
+  \path [line] (parent) |- (fsalt);
+  \path [line] (parent) |- (fs13);
+  \path [line] (parent) |- (fs14);
+  \path [line] (parent) |- (fs15);
+  \path [line] (parent) |- (fsaktuell); %| vline to disable odd look in emacs
+  %
+  % 2nd level nodes
+  \node [description, right of=fsaktuell, node distance=5.5cm] (wichtigakt)
+   {Aktuelles Studienjahr};
+  % 2st level edges
+  \path [line] (fsaktuell) |- (wichtigakt);%| vline to disable odd look in emacs
+\end{tikzpicture}
+
+% tikzpic for [Formelsammlung_Dynamik] 
+\begin{tikzpicture}[node distance = 1.5cm, auto]
+  % 1st level nodes
+  \node [root] (parent) {Vorlesungsbehelf\_yyyy\_zzzz};
+  \node [description, right of=parent, node distance=5cm] (wichtigpar)
+   {Aktuelles Studienjahr};
+  \node [virtualnode, below of=parent] (vn) {};
+  \node [sdir, right of=vn, node distance = 4cm] (eps) {bilder\_eps};
+  \node [sdir, below of=eps] (cd) {Bilder\_Corel\_Draw};
+  \node [sdir, below of=cd] (content) {content};
+  \node [sdir, below of=content] (schwingg) {Erg\"{a}nzung Schwingg};
+  \node [sdir, below of=schwingg] (img) {img};
+  \node [sdir, below of=img] (junk) {junk};
+  \node [sdir, below of=junk] (print) {print};
+  \node [sdir, below of=print] (style) {style};
+  \node [lpdf, below of=style] (fspdf) {Vorlesungsbehelf\_Mechanik\_B3.pdf};
+  \node [ltex, below of=fspdf] (fstex) {Vorlesungsbehelf\_Mechanik\_B3.tex};
+  % 1st level edges
+  \path [line] (parent) |- (wichtigpar);
+  \path [line] (parent) |- (eps);
+  \path [line] (parent) |- (cd);
+  \path [line] (parent) |- (content);
+  \path [line] (parent) |- (schwingg);
+  \path [line] (parent) |- (img);
+  \path [line] (parent) |- (junk);
+  \path [line] (parent) |- (print);
+  \path [line] (parent) |- (style);
+  \path [line] (parent) |- (fspdf);
+  \path [line] (parent) |- (fstex);%| vline to disable odd look in emacs
+  %
+  % 2nd level nodes
+  \node [description, right of=eps, node distance=5cm] (wichtigeps)
+   {Sammlung aller Bilder in eps};
+  \node [description, right of=cd, node distance=5cm] (wichtigcd)
+   {In Kapitel gegliederte crd-files};
+  \node [description, right of=content, node distance=5cm] (wichtigcontent)
+   {.tex files (Kapitel, Deckblatt)};
+  \node [obsolete, right of=schwingg, node distance=5cm] (unschwingg)
+   {obsolet};
+  \node [obsolete, right of=img, node distance=5cm] (unimg)
+   {unwichtig};
+  \node [obsolete, right of=junk, node distance=5cm] (unjunk)
+   {unwichtig};
+  \node [obsolete, right of=print, node distance=5cm] (unprint)
+   {unwichtig};
+  \node [description, right of=style, node distance=5cm] (wichtigstyle)
+   {zs\_preambel.tex, macro.tex};
+  % 2nd level edges
+  \path [line] (eps) |- (wichtigeps);
+  \path [line] (cd) |- (wichtigcd);
+  \path [line] (content) |- (wichtigcontent);
+  \path [line] (schwingg) |- (unschwingg);
+  \path [line] (img) |- (unimg);
+  \path [line] (junk) |- (unjunk);
+  \path [line] (print) |- (unprint);
+  \path [line] (style) |- (wichtigstyle);%| vline to disable odd look in emacs
+\end{tikzpicture}
+
+% tikzpic for [Uebungsblaetter_Dynamik] 
+\begin{tikzpicture}[node distance = 1.5cm, auto]
+  % 1st level nodes
+  \node [root] (parent) {\"{U}bungsbl\"{a}tter\_Dynamik};
+  \node [virtualnode, below of=parent] (vn) {};
+  \node [ldir, right of=vn, node distance = 4cm] (aktuell)
+   {Aktuelle\_Lehrveranstaltung};
+  \node [ldir, below of=aktuell] (archiv) {Archiv Studienunterlagen};
+  \node [ldir, below of=archiv] (basis) {Basisdaten};
+  \node [spdf, below of=basis] (apdf) {Aufgaben.pdf};
+  \node [stex, below of=apdf] (atex) {Aufgaben.tex};
+  % 1st level edges
+  \path [line] (parent) |- (aktuell);
+  \path [line] (parent) |- (archiv);
+  \path [line] (parent) |- (basis);
+  \path [line] (parent) |- (apdf);
+  \path [line] (parent) |- (atex);%| vline to disable odd look in emacs
+  %
+  % 2nd level nodes
+  \node [sdir, right of=aktuell, node distance=8cm] (lxx)
+   {L\"{o}sungen\_WSyyzz};
+  \node [sdir, above of=lxx] (dxx) {Durchgerechnet\_WSyyzz};
+  \node [sdir, above of=dxx] (axx) {Aufgaben\_WSyyzz};
+  
+\end{tikzpicture}
+
+
+%\begin{landscape}
+%Test.
+%\end{landscape}

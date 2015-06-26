@@ -63,6 +63,8 @@ openright,          % open chapter on right hand side
 \usepackage{siunitx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
+\usepackage{pdflscape}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% HEADER, FOOTER, PAGE FORMAT
@@ -83,7 +85,7 @@ openright,          % open chapter on right hand side
 \clearscrheadfoot
 
 \ohead[]{\footnotesize{\headmark}}
-\ifoot{\footnotesize{Finite Element Methode VA - Technischer Bericht}}
+\ifoot{\footnotesize{Einf\"{u}hrung f\"{u}r StudienassistentInnen der Dynamik}}
 \ofoot[\footnotesize{\pagemark}]{\footnotesize{\pagemark}}
 
 \addtokomafont{caption}{\small}
@@ -91,7 +93,6 @@ openright,          % open chapter on right hand side
 \setkomafont{captionlabel}{\sffamily\bfseries}
 
 \graphicspath{{./pictures/}}
-\graphicspath{{./coverPics/}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% LOAD VARIABLES, MACROS
@@ -122,6 +123,10 @@ openright,          % open chapter on right hand side
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \include{./texs/0_structure}
+%
+%\include{./texs/1_latex}
+%
+%\include{./texs/2_tc}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

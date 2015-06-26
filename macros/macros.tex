@@ -1,36 +1,72 @@
-% package requirements
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PACKAGE REQUIREMENTS
 \RequirePackage{tikz}
 
-% tikz macros
-\tikzstyle{startstop} =
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TIKZ MACROS
+
+% virtual (invisible) node
+\tikzstyle{virtualnode} =
+[ellipse, minimum width = 0cm, minimum height = 0cm, text centered,
+text width = 0cm, draw=white]
+
+% nodes associated with directories
+\tikzstyle{root} =
 [rectangle, rounded corners, minimum width = 3cm, minimum height = 1cm,
 text centered, draw=black, fill=red!15]
 
-\tikzstyle{io} = 
-[trapezium, trapezium left angle = 70, trapezium left angle = 110, 
-minimum width = 3cm, minimum height = 1cm, text centered, draw=black, 
-fill=blue!15]
+\tikzstyle{sdir} =
+[rectangle, minimum width = 1cm, minimum height = 1cm, text centered, 
+text width = 4cm, draw=black, fill=blue!15]
 
-\tikzstyle{process} =
-[rectangle, minimum width = 3cm, minimum height = 1cm, text centered, 
-text width = 5cm, draw=black, fill=blue!15]
+\tikzstyle{ldir} =
+[rectangle, minimum width = 1cm, minimum height = 1cm, text centered, 
+text width = 6cm, draw=black, fill=blue!15]
 
-\tikzstyle{decision} =
-[diamond, minimum width = 3cm, minimum height = 1cm, text centered, draw=black,
-fill=blue!15]
+% nodes associated with files
+\tikzstyle{stex} =
+[rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm,
+text centered, text width = 3cm, draw=black, fill=green!15]
 
-\tikzstyle{arrow} = [thick,->, >=stealth]
+\tikzstyle{ltex} =
+[rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm,
+text centered, text width = 6cm, draw=black, fill=green!15]
+
+\tikzstyle{spdf} =
+[rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm,
+text centered, text width = 3cm, draw=black, fill=yellow!15]
+
+\tikzstyle{lpdf} =
+[rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm, 
+text centered, text width = 6cm, draw=black, fill=yellow!15]
+
+\tikzstyle{filemisc} =
+[rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm, 
+text centered, text width = 4cm, draw=black, fill=red!15]
+
+% descriptive node
+\tikzstyle{description} = 
+[rectangle, rounded corners, minimum width = 2cm, minimum height = 1cm, 
+text width = 3cm, text centered, draw=black, fill=green!15]
+
+% descriptive node about obsoleteness
+\tikzstyle{obsolete} = 
+[rectangle, minimum width = 1cm, minimum height = 1cm, text centered, 
+text width = 2cm, draw=white]
+
+% line
+\tikzstyle{line} = [draw, -latex']
 
 % tikz styles
-\tikzstyle{lpro} = 
-[rectangle, minimum width = 3cm, minimum height = 1cm, text centered,
- text width = 6.5cm, draw=black, fill=blue!15]
+%\tikzstyle{lpro} = 
+% [rectangle, minimum width = 3cm, minimum height = 1cm, text centered,
+% text width = 6.5cm, draw=black, fill=blue!15]
 
-\tikzstyle{llpro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-text centered, text width = 7.5cm, draw=black, fill=blue!15]
+%\tikzstyle{llpro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
+%text centered, text width = 7.5cm, draw=black, fill=blue!15]
 
-\tikzstyle{spro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-text centered, text width = 4cm, draw=black, fill=blue!15]
+%\tikzstyle{spro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
+%text centered, text width = 4cm, draw=black, fill=blue!15]
 
-\tikzstyle{sspro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-text centered, text width = 3cm, draw=black, fill=blue!15]
+%\tikzstyle{sspro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
+%text centered, text width = 3cm, draw=black, fill=blue!15]
