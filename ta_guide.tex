@@ -1,0 +1,129 @@
+% This is the main TeX document for the guide for teaching assistants in
+% dynamics at AM:BM.
+%
+% Note that this file as well as the title page are derived from documents
+% handed out by Samir Omerovic of the Institute of Structural Analysis at
+% TU Graz.  
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+a4paper,            % defines the paper size: a4paper (default), a5paper
+BCOR20mm,           % Bindekorrektur
+twoside,            % changes to a two-page-layout (alternatively: oneside)
+parskip=half,       % insert an empty line between two paragraphs (skip, ...)
+openright,          % open chapter on right hand side
+]{scrreprt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PACKAGES
+\usepackage{amsmath,amssymb,amstext,wasysym}
+\usepackage{blkarray}
+\usepackage[ngerman]{babel}             % ngerman: language set to new-german
+\usepackage[latin1]{inputenc}           % coding of german special characters
+\usepackage{ae,aecompl}                 % ae, aecompl: coding of characters in
+                                        % PDF documents
+\usepackage{listings}                   % listings: include programming code
+\usepackage{units}                      % units: technical units
+\usepackage[automark]{scrpage2}         % scrpage2: KOMA heading and footer
+\usepackage[pdftex]{graphicx}						% graphicx: support for graphic
+\usepackage{babelbib} 
+\usepackage{subfigure}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{courier}
+\usepackage{color}
+\usepackage{float}   
+\usepackage{booktabs}
+\usepackage{overpic}    
+\usepackage[%
+  pdftex=true,               % sets up hyperref for use with the pdftex program
+  hypertexnames=false,
+  plainpages=false,
+  pdfpagelabels,
+  pagebackref=false,         % if true, creates backward references in the
+                             % bibliography
+  colorlinks=false,          % true is better for on-screen reading, false is
+                             % better for printout versions
+  bookmarks=true,            % if true, generate PDF bookmarks (requires two 
+                             % passes of pdflatex)
+  bookmarksopen=true,        % if true, show all PDF bookmarks expanded	f
+  bookmarksnumbered=true,    % if true, add the section numbers to the bookmarks
+  pdftitle={TA_Guide},       % title
+  pdfauthor={Dominik P\"{o}lz, Daniel Sch\"{o}llhammer},
+  pdfsubject={AMBM - Dynamik - Einf\"{u}hrung f\"{u}r Studienassistentinnen},
+  pdfcreator={Accomplished with LaTeX2e and pdfLaTeX with hyperref-package.}, %
+  pdfproducer={},                       %
+  pdfkeywords={TU Graz, AMBM, Dynamik, Studienassistent}, %
+  pdfstartview=Fit,                     % pdf-viewer uses certain page width at
+                                        % start
+  pdfpagemode={UseOutlines},            % pdf-viewer starts TOC et.al.
+                                        % (opposite: none)
+]{hyperref}
+
+\usepackage{verbatim}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% HEADER, FOOTER, PAGE FORMAT
+\setlength{\paperheight}{30cm}
+\setlength{\textheight}{24.5cm}
+\setlength{\paperwidth}{21cm}
+\setlength{\textwidth}{16.8cm}
+\setlength{\oddsidemargin}{-0.3cm}
+\setlength{\evensidemargin}{-0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\topmargin}{-1.9cm}
+\setlength{\headsep}{1.3cm}
+\setlength{\footskip}{1.5cm}
+
+\pagestyle{scrheadings}
+\setheadsepline{.4pt}
+\automark[section]{chapter}
+\clearscrheadfoot
+
+\ohead[]{\footnotesize{\headmark}}
+\ifoot{\footnotesize{Finite Element Methode VA - Technischer Bericht}}
+\ofoot[\footnotesize{\pagemark}]{\footnotesize{\pagemark}}
+
+\addtokomafont{caption}{\small}
+\addtokomafont{captionlabel}{\small}
+\setkomafont{captionlabel}{\sffamily\bfseries}
+
+\graphicspath{{./pictures/}}
+\graphicspath{{./coverPics/}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LOAD VARIABLES, MACROS
+\include{macros/variables}
+\include{macros/macros}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT
+\begin{document}
+
+% big roman page numbers
+\pagenumbering{Roman}                
+
+% include the title
+\include{./texs/title} 
+% include the preface
+\include{./texs/preface}
+% include TOC
+\tableofcontents
+\cleardoubleplainpage
+
+% set pagenumbering to arabic and reset counter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% INCLUDE CONTENT $$$$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\include{./texs/0_structure}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
