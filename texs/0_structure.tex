@@ -1,25 +1,38 @@
 % chapter 1 : structure
 \chapter{Struktur}
 
-Inhalt.
+In diesem Kapitel wird die Ordner- und Datenstruktur erläutert, die dem Skriptum
+und der Übungssammlung zugrunde liegt.
 
 \section{\"{U}bersicht}
-% tikzpic from [drive N:] to [Lehrveranstaltungen] 
+
+Alle relevanten Dateien befinden sich im Laufwerk \twrite{N:}
+(\twrite{MECH/BS1/}), wie in \figref{fig:uebersicht} dargestellt wird.
+Im Folgenden findet sich noch eine kurze Erklärung zu den einzelnen Ordnern.
+
+% tikzpic from [drive N:] to [Lehrveranstaltungen]
+\begin{figure}[h!]
 \begin{tikzpicture}[node distance = 1.5cm, auto]
   % 1st level nodes
   \node [root] (drive) {Laufwerk N:};
-  \node [root, below of=drive] (parent) {Bauer-Studienassistenten};
+  \node [root, below of=drive] (parent) {Bauer-StudienassistentInnen};
+  \node [root, right of=drive, node distance=4.5cm] (public) {Public};
+  \node [obsolete, right of=public, node distance=3.5cm] (unpublic)
+   {unwichtig};
   \node [virtualnode, below of=parent] (vn) {};
   \node [sdir, right of=vn, node distance = 3cm] (admin) 
    {Administratives};
   \node [sdir, below of=admin] (bauer) {Bauer};
-  \node [sdir, below of=bauer] (lvs) {Lehrveranstaltungen};
-  \node [sdir, below of=lvs] (sicherung) {Sicherungen Archiv};
+  \node [sdir, below of=bauer] (lvs) {\bf Lehrveranstaltungen};
+  \node [sdir, below of=lvs] (sicherung) {Sicherung Archiv};
   \node [sdir, below of=sicherung] (sonst) {Sonstiges};
   \node [sdir, below of=sonst] (studis) {StudienassistentInnen-Privat};
-  \node [sdir, below of=studis] (tc) {TeachCenter};
+  \node [sdir, below of=studis] (tc) {Teach Center};
   \node [sdir, below of=tc] (ulz) {ULZ};
   % 1st level edges
+  \path [line] (drive) -- (public);
+  \path [line] (public) -- (unpublic);
+  \path [line] (drive) -- (parent);
   \path [line] (drive) -- (parent);
   \path [line] (parent) |- (admin);
   \path [line] (parent) |- (bauer);
@@ -44,7 +57,7 @@ Inhalt.
   \node [description, right of=studis, node distance=5cm] (ordner)
    {Eigener Ordner, Diverses};
   \node [description, right of=tc, node distance=5cm] (wichtigtc)
-   {Guide zum TC\\ Alte Daten};
+   {Guide zum TC,\\ Alte Daten};
   \node [obsolete, right of=ulz, node distance=5cm] (unulz)
    {unwichtig};
   % 2nd level edges
@@ -57,9 +70,63 @@ Inhalt.
   \path [line] (tc) -- (wichtigtc);
   \path [line] (ulz) -- (unulz);
 \end{tikzpicture}
+\caption{Übersicht zur Struktur im Ordner \twrite{Bauer-StudienassistentInnen}.}
+\label{fig:uebersicht}
+\end{figure}
 
-\section{Ordner Lehrveranstaltungen}
-% tikzpic from [Lehrveranstaltungen] to [Formelsammlung]/[Uebung] 
+\begin{itemize}
+  \item \twrite{Administratives:} Hier befinden sich einige verschiedene
+    Dateien, primär {\tt .doc}-files. Die einzig wirklich relevanten sich jedoch
+    die {\it Stundenliste} und die Liste der {\it Studienassistenz}. Erstere ist
+    eine Vorlage, um darin die geleisteten Stunden eintragen zu können. Letztere
+    beinhaltet die Kontaktdaten aller Studienassitenten.
+  \item \twrite{Lehrveranstaltungen:} Der wichtigste Ordner hier, wird
+    nachfolgend noch genauer erklärt.
+  \item \twrite{StudienassistentInnen-Privat:} Jede Studienassistentin bzw.
+    jeder Studienassistent kann sich hier einen eigenen Ordner anlegen.
+    Falls man die Studenliste digitial führen möchte (was grundsätzlich zu
+    empfehlen ist), kann diese hier gespeichert werden.
+  \item \twrite{Teach Center:} Hier befindet sich eine 
+    {\it Einführung ins Teach Center}, die jedoch etwas länglich ist, und viele
+    Funktionen anspricht, die wir im Rahmen der LV nie benötigt haben
+    (Umfragen, Forum, etc.). Weiters befinden sich veraltete Sicherungskopien
+    der Daten im TC darin, die eigentlich nicht mehr benötigt werden. 
+\end{itemize}
+
+\section{Ordner \twrite{Lehrveranstaltungen}}
+
+Wie man in \figref{fig:lvs} erkennen kann, befinden sich im Unterordner\\
+\twrite{Lehrveranstaltungen/Unterlagen\_Dynamik/} alle wichtigen Dateien zu
+den Fächern der Studienassistenten. Bei den beiden anderen Fächern
+\twrite{Kontinuumsmechanik} und \twrite{Materialtheorie} müssen in der Regel
+keine Änderungen vorgenommen werden. In untenstehender Auflistung wird kurz auf
+die in der Abbildung vorkommenden Ordner eingegangen.
+
+\begin{itemize}
+  \item \twrite{Formelsammlung\_Dynamik:} In diesem Ordner befindet sich das
+    Skriptum (welches nun als \glqq{}Vorlesungsbehelf\grqq{} bekannt ist, früher
+    aber \glqq{}Formelsammlung\grqq{} hieß). Im Folgenden wird noch genauer
+    darauf eingegangen.
+  \item \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik:} Hier sind alle Dateien
+    zu den Angaben der Übungen, der Lösungen und der durchgerechneten Beispiele.
+    Etwas später wird ebenfalls noch genauer darauf eingegangen.
+  \item \twrite{LV\_Organisation/Archiv:} In diesem Ordner sind primär die
+    {\tt .pdf}-files der Formelsammlung und der Übungsbätter der
+    Lehrveranstaltungen der vergangenen Jahre gespeichert. Am Ende des
+    Sommersemesters sollten die Unterlagen der endenden Lehveranstaltung hier
+    abgespeichert werden.
+   \item \twrite{LV\_Organisation/Aktuelle\_Lehrveranstaltung:} Hier sind alle
+     notwendigen Dateien der momentanen Lehrveranstaltung gespeichert. Zum
+     einen sollen hier die Beurteilungslisten der Prüfungen im {\tt .xls}
+     Format (also als {\tt Excel}-Dateien) abgelegt werden. Außerdem sind die
+     Prüfungsmodalitäten als {\tt .pdf} abgespeichert. Zum Stundenplan sind
+     sowohl die erzeugenden {\tt Excel}-sheets, als auch die exportierten
+     {\tt .pdf}-Dateien enthalten. Außerdem gibt es {\tt .xls}-Listen zur 
+     Übungsblattabgabe.
+\end{itemize}
+
+% tikzpic from [Lehrveranstaltungen] to [Formelsammlung]/[Uebung]
+\begin{figure} 
 \begin{tikzpicture}[node distance = 1.5cm, auto]
   % 1st level nodes
   \node [root] (parent) {Lehrveranstaltungen};
@@ -67,7 +134,7 @@ Inhalt.
   \node [ldir, right of=vn, node distance=4cm] (kmech)
    {Unterlagen\_Kontinuumsmechanik};
   \node [ldir, below of=kmech] (material) {Unterlagen\_Materialtheorie};
-  \node [ldir, below of=material] (dynamik) {Unterlagen\_Dynamik};
+  \node [ldir, below of=material] (dynamik) {\bf Unterlagen\_Dynamik};
   % 1st level edges
   \path [line] (parent) |- (dynamik);
   \path [line] (parent) |- (kmech);
@@ -80,8 +147,8 @@ Inhalt.
    {unwichtig};
   \node [virtualnode, below of=dynamik] (vndyn) {};
   \node [ldir, right of=vndyn, node distance=3.5cm] (formel)
-   {Formelsammlung\_Dynamik};
-  \node [ldir, below of=formel] (uebung) {\"{U}bungsblaetter\_Dynamik} ;
+   {\bf Formelsammlung\_Dynamik};
+  \node [ldir, below of=formel] (uebung) {\bf \"{U}bungsbl\"{a}tter\_Dynamik} ;
   \node [ldir, below of=uebung] (org) {LV\_Organisation};
   % 2nd level edges
   \path [line] (kmech) |- (unkmech);
@@ -98,12 +165,13 @@ Inhalt.
   \node [virtualnode, below of=org] (vnorg) {};
   \node [ldir, right of=vnorg, node distance=3.5cm] (archiv)
    {Archiv};
-  \node [obsolete, below of=archiv] (unarchiv) {unwichtig};
-  \node [ldir, below of=unarchiv] (aktuell) {Aktuelle\_Lehrveranstaltung};
+  \node [description, below of=archiv] (wichtigarchiv)
+   {Daten der Vorjahres-LVs};
+  \node [ldir, below of=wichtigarchiv] (aktuell) {Aktuelle\_Lehrveranstaltung};
   % 3rd level edges
   \path [line] (formel) |- (wichtigformel);
   \path [line] (uebung) |- (wichtiguebung);
-  \path [line] (archiv) -- (unarchiv);
+  \path [line] (archiv) -- (wichtigarchiv);
   \path [line] (org) |- (archiv);
   \path [line] (org) |- (aktuell); %| vline to disable odd look in emacs
   %
@@ -122,9 +190,29 @@ Inhalt.
   \path [line] (aktuell) |- (teilnehmer);
   \path [line] (aktuell) |- (abgabe); %| vline to disable odd look in emacs
 \end{tikzpicture}
+\caption{Übersicht zum Ordner \twrite{Lehrveranstaltungen}.}
+\label{fig:lvs}
+\end{figure}
 
-\section{Ordner Formelsammlung\_Dynamik}
+\section{Ordner \twrite{Formelsammlung\_Dynamik}}
+
+Wie in \figref{fig:formelsammlung} dargelegt, befinden sich im Unterordner 
+\twrite{Formelsammlung\_Dynamik} alle Versionen der Formelsammlung der 
+vergangenen Jahre. Wie bereits erwähnt, wurde die \glqq{}Formelsammlung\grqq{} 
+im Jahr 2013 auf \glqq{}Vorlesungsbehelf\grqq{} umgetauft. Grundsätzlich ist 
+aber nur der Ordner mit dem aktuellen Studienjahr relevant, welches im 
+Folgenden als \twrite{yyyy\_zzzz} bezeichnet wird. Somit ist der Ordner 
+\twrite{Vorlesungsbehelf\_yyyy\_zzzz} der einzig relevante, da alle anderen nur
+der Archivierung dienen.
+
+Am Ende des Sommersemesters wird der Ordner
+\twrite{Vorlesungsbehelf\_yyyy\_zzzz} kopiert und mit den Jahreszahlen des
+kommenden Semester ausgestattet, und nur noch dieser neue Ordner bearbeitet. 
+Somit wird sichergestellt, dass immer eine funktionsfähige Version der 
+Formelsammlung des Vorjahres vorhanden ist.
+
 % tikzpic for [Formelsammlung_Dynamik] 
+\begin{figure}
 \begin{tikzpicture}[node distance = 1.5cm, auto]
   % 1st level nodes
   \node [root] (parent) {Formelsammlung\_Dynamik};
@@ -134,7 +222,7 @@ Inhalt.
   \node [ldir, below of=fsalt] (fs13) {Vorlesungsbehelf\_2013\_2014};
   \node [ldir, below of=fs13] (fs14) {Vorlesungsbehelf\_2014\_2015};
   \node [ldir, below of=fs14] (fs15) {Vorlesungsbehelf\_2015\_2016};
-  \node [ldir, below of=fs15] (fsaktuell) {Vorlesungsbehelf\_yyyy\_zzzz};
+  \node [ldir, below of=fs15] (fsaktuell) {\bf Vorlesungsbehelf\_yyyy\_zzzz};
   % 1st level edges
   \path [line] (parent) |- (fsalt);
   \path [line] (parent) |- (fs13);
@@ -148,22 +236,59 @@ Inhalt.
   % 2st level edges
   \path [line] (fsaktuell) |- (wichtigakt);%| vline to disable odd look in emacs
 \end{tikzpicture}
+\caption{Übersicht zum Ordner \twrite{Formelsammlung\_Dynamik}.}
+\label{fig:formelsammlung}
+\end{figure}
 
-% tikzpic for [Formelsammlung_Dynamik] 
+
+\subsection{Unterordner \twrite{Vorlesungsbehelf\_yyyy\_zzzz}}
+In \figref{fig:fsakt} wird der Aufbau der Ordnerstruktur der aktuellen
+Formelsammlung dargestellt. Wie wichtigsten Ordner und Dateien sind:
+
+\begin{itemize}
+  \item \twrite{bilder\_eps:} Alle Bilder, die in der Formelsammlung eingebunden
+    werden, müssen im Format {\tt eps} vorliegen. Im Allgemeinen werden die
+    Bilder in {\tt Corel-Draw} gezeichnet, und als {\tt eps} exportiert. Dieser
+    Ordner, dient zur Ablage aller {\tt eps}-Dateien, damit nur Pfad angegeben
+    werden muss, um auf alle Grafiken zugreifen zu können.
+  \item \twrite{Bilder\_Corel\_Draw:} Hier befinden sich alle Grafiken, die
+    in der Formelsammlung zu Anwendung kommen im Format {\tt crd}. 
+    Grundsätzlich sind die Dateien in Unterordnern zu den einzelnen Kapiteln
+    angeordnet. Es sind zwar auch einige files außerhalb der Kapitel zu finden,
+    jedoch werden diese in der Formelsammlung selbst nie gebraucht.
+  \item \twrite{content:} In diesem Ordner sind alle {\tt tex}-files der
+    einzelnen Kapitel und des Deckblattes zu finden. Sollten Änderungen
+    am Inhalt der Formelsammlung vorgenommen werden, so findet man die meisten
+    notwendigen Dateien hier.
+  \item \twrite{style:} Hier befinden sich die Dateien {\tt zs\_preambel.tex}
+    und {\tt macros.tex}. Das \glqq{}zs\grqq{} bezieht sich hier auf 
+    \glqq{}zweiseitig\grqq{}. Es gibt zwar hier auch ein {\tt es\_preambel.tex}
+    (\glqq{}einseitig\grqq{}), jedoch wird die Formelsammlung seit 2013 
+    eigentlich nur mehr zweiseitig ins TC gestellt. Grundsätzlich sollten diese
+    Dateien {\bf nicht} geändert werden (außer man weiß genau, was man tut)!
+    Wofür diese Dateien zuständig sind, wird im nächsten Kapitel skizziert.
+  \item \twrite{Vorlesungsbehelf\_Mechanik\_B3.tex:} Das \LaTeX-file zur
+    Erstellung der Formelsammlung. Darin werden das Deckblatt und die Kapitel
+    kompiliert und als \twrite{Vorlesungsbehelf\_Mechanik\_B3.pdf}
+    exportiert. Die genauere Funktionsweise wird im nächsten Kapitel erklärt.
+\end{itemize}
+
+% tikzpic for [Vorlesungsbehelf_yyyy_zzzz] 
+\begin{figure}
 \begin{tikzpicture}[node distance = 1.5cm, auto]
   % 1st level nodes
   \node [root] (parent) {Vorlesungsbehelf\_yyyy\_zzzz};
   \node [description, right of=parent, node distance=5cm] (wichtigpar)
    {Aktuelles Studienjahr};
   \node [virtualnode, below of=parent] (vn) {};
-  \node [sdir, right of=vn, node distance = 4cm] (eps) {bilder\_eps};
-  \node [sdir, below of=eps] (cd) {Bilder\_Corel\_Draw};
-  \node [sdir, below of=cd] (content) {content};
+  \node [sdir, right of=vn, node distance = 4cm] (eps) {\bf bilder\_eps};
+  \node [sdir, below of=eps] (cd) {\bf Bilder\_Corel\_Draw};
+  \node [sdir, below of=cd] (content) {\bf content};
   \node [sdir, below of=content] (schwingg) {Erg\"{a}nzung Schwingg};
   \node [sdir, below of=schwingg] (img) {img};
-  \node [sdir, below of=img] (junk) {junk};
+  \node [sdir, below of=img] (junk) {Junk};
   \node [sdir, below of=junk] (print) {print};
-  \node [sdir, below of=print] (style) {style};
+  \node [sdir, below of=print] (style) {\bf style};
   \node [lpdf, below of=style] (fspdf) {Vorlesungsbehelf\_Mechanik\_B3.pdf};
   \node [ltex, below of=fspdf] (fstex) {Vorlesungsbehelf\_Mechanik\_B3.tex};
   % 1st level edges
@@ -206,16 +331,85 @@ Inhalt.
   \path [line] (print) |- (unprint);
   \path [line] (style) |- (wichtigstyle);%| vline to disable odd look in emacs
 \end{tikzpicture}
+\caption{Übersicht zum Ordner der aktuellen Formelsammlung.}
+\label{fig:fsakt}
+\end{figure}
 
-% tikzpic for [Uebungsblaetter_Dynamik] 
-\begin{tikzpicture}[node distance = 1.5cm, auto]
+\section{Ordner \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik}}
+
+Wie in \figref{fig:ueblaett} gut erkennbar ist, werden hier alle Daten für
+die Übungsaufgaben, die Lösungen dazu und alle durchgerechneten Beispiele
+verwaltet. Im Gegensatz zur Formelsammlung gibt es keine Unterordner der
+einzelnen Studienjahre, es werden ledigilich die {\tt .pdf}-Dokumente der 
+Vorjahre archiviert (aber nicht die gesamte Masse an {\tt .tex}, {\tt .eps} und 
+{\tt .crd} Dateien). Die wichtigsten Ordner und Dateien werden nun abermals kurz
+kommentiert.
+
+\newpage
+\begin{itemize}
+  \item \twrite{Aktuelle\_Lehrveranstaltung:} Dieser Ordner beinhaltet im
+    Wesentlichen die drei Dateien \twrite{Aufgaben\_WSyyzz.tex},
+    \twrite{Durchgerechnet\_WSyyzz.tex} und 
+    \twrite{L\ddot{o}sungen\_WSyyzz.tex}. Diese Dateien bestimmen, welche
+    Aufgaben / durchgerechnete Beispiele / Lösungen in den finalen
+    {\tt .pdf}-Dokumenten aufscheinen. Am Ende des Sommersemester werden diese
+    drei files kopiert und mit den Jahreszahlen des kommenden Studienjahres
+    ausgestattet. Die alten Dateien können in den Ordner
+    \twrite{Archiv~Studienunterlagen} (bzw. in einen Unterordner mit den
+    entsprechenden Jahreszahlen) verschoben werden. Die Funktionsweise der drei
+    \LaTeX-files wird im nächsten Kapitel genau beschrieben.
+  \item \twrite{Archiv Studienunterlagen:} Ablage alter Dateien der Vorjahre.
+  \item \twrite{Basisdaten:} Hier befinden sich alle wichtigen Dateien, wie
+    beispielsweise die Deckblätter und die einzelnen Beispiele.
+  \item \twrite{Aufgaben.tex:} Diese \LaTeX-file dient zur Erstelllung
+    {\bf aller drei} übungsbezogenen Dokumente (d.h. Angaben, Durchgerechnete
+    {\bf und} Lösungen). Der Inhalt wird in \twrite{Aufgaben.pdf} exportiert
+    und die genaue Funktion im zweiten Kapitel erklärt.
+  \item \twrite{Basisdaten/crd:} Alle {\tt .crd}-files. Es gibt hier keine
+    Unterteilung in Kapitel oder Unterscheidung zwischen Angaben,
+    Durchgerechnete oder Lösungen.
+  \item \twrite{Basisdaten/eps:} Alle {\tt .eps}-files. Es gibt hier keine
+    Unterteilung in Kapitel oder Unterscheidung zwischen Angaben,
+    Durchgerechnete oder Lösungen.
+  \item \twrite{Basisdaten/style:} Hier befinden sich neben der 
+    \twrite{preambel.tex} (an der man abermals nichts ändern sollte), die
+    Datei \twrite{variable.tex} und die Deckblätter. In \twrite{variable.tex}
+    befinden sich, wie der Name schon suggeriert, viele Variablen, die beim
+    Übergang von ein Studienjahr auf das nächste geändert werden müssen. Diese
+    sind zum Beispiel die Nummer der für die Übungsblattabgabe relevanten
+    Beispiele, die Termine der Prüfungen und das Studienjahr selbst. Die
+    Handhabung von \twrite{variable.tex} und der Deckblätter wird im nächsten
+    Kapitel noch weiter vertieft.
+  \item \twrite{Basisdaten/tex:} Hier befinden sich die \LaTeX-files zu den
+    eigentlichen Beispielen. Beispielsweise befinden sich im Unterordner
+    \twrite{Basisdaten/tex/Aufgaben} die files \\\twrite{Aufgabe\_01.tex},
+    \twrite{Aufgabe\_02.tex},\dots,\twrite{Aufgabe\_nn.tex},d.h. jede Aufgabe
+    hat hier ihr eigenes {\tt .tex}-file. Müssen Änderungen an einzelnen
+    Beispielen vorgenommen werden, so können also hier die notwendigen Dateien
+    gefunden werden. Die beiden anderen Unterordner für die Durchgerechneten 
+    und die Lösungen sind gleich aufgebaut.
+
+    {\bf Wichtig:} Die Nummerierung der Beispiele ist mehr oder weniger
+    willkürlich. Nur weil eine Aufgabe die Nummer 02 hat (also 
+    \twrite{Aufgabe\_02.tex}), muss diese nicht notwendigerweise als zweite
+    Aufgabe in den Angaben aufscheinen. Die Nummerierung hier erfolgt eigentlich
+    nach dem Zeitpunkt des Erstellens eines Beispiels. Wird also ein neues
+    Beispiel erstellt, so sollte dieses Beispiel die Nummer des kleinstmöglichen
+    noch freien Indexes bekommen.\\
+    Zur Nummerierung der Beispiele wird noch etwas detaillierter im zweiten
+    Kapitel Stellung genommen.
+\end{itemize}
+
+% tikzpic for [Uebungsblaetter_Dynamik]
+\begin{figure} 
+\begin{tikzpicture}[node distance = 1.4cm, auto]
   % 1st level nodes
   \node [root] (parent) {\"{U}bungsbl\"{a}tter\_Dynamik};
   \node [virtualnode, below of=parent] (vn) {};
-  \node [ldir, right of=vn, node distance = 4cm] (aktuell)
-   {Aktuelle\_Lehrveranstaltung};
+  \node [ldir, right of=vn, node distance = 3.5cm] (aktuell)
+   {\bf Aktuelle\_Lehrveranstaltung};
   \node [ldir, below of=aktuell] (archiv) {Archiv Studienunterlagen};
-  \node [ldir, below of=archiv] (basis) {Basisdaten};
+  \node [ldir, below of=archiv] (basis) {\bf Basisdaten};
   \node [spdf, below of=basis] (apdf) {Aufgaben.pdf};
   \node [stex, below of=apdf] (atex) {Aufgaben.tex};
   % 1st level edges
@@ -226,12 +420,66 @@ Inhalt.
   \path [line] (parent) |- (atex);%| vline to disable odd look in emacs
   %
   % 2nd level nodes
-  \node [sdir, right of=aktuell, node distance=8cm] (lxx)
-   {L\"{o}sungen\_WSyyzz};
-  \node [sdir, above of=lxx] (dxx) {Durchgerechnet\_WSyyzz};
-  \node [sdir, above of=dxx] (axx) {Aufgaben\_WSyyzz};
-  
+  \node [virtualnode, right of=aktuell, node distance=3.5cm] (vnxx) {};
+  \node [ltex, right of=vnxx, node distance=3.5cm] (lxx)
+   {L\"{o}sungen\_WSyyzz.tex};
+  \node [ltex, above of=lxx] (dxx) {Durchgerechnet\_WSyyzz.tex};
+  \node [ltex, above of=dxx] (axx) {Aufgaben\_WSyyzz.tex};
+  \node [description, right of=archiv, node distance=7cm] (wichtigarchiv)
+   {.pdf-Dateien der Vorjahres-LVs};
+  \node [virtualnode, right of=basis, node distance=9cm] (vnbase) {};
+  \node [virtualnode, below of=vnbase, node distance=5cm] (vnbranch) {};
+  \node [sdir, left of=vnbranch, node distance=3cm] (crd) {\bf crd};
+  \node [sdir, below of=crd] (eps) {\bf eps};
+  \node [sdir, below of=eps] (style) {\bf style};
+  \node [sdir, below of=style] (tex) {\bf tex};
+  % 2nd level edges
+  \path [line] (aktuell) |- (lxx);
+  \path [line] (vnxx) |- (dxx);
+  \path [line] (vnxx) |- (axx);
+  \path [line] (archiv) |- (wichtigarchiv);
+  \path [line] (basis) -- (vnbase);
+  \path [line] (vnbase) |- (crd);
+  \path [line] (vnbase) |- (eps);
+  \path [line] (vnbase) |- (style);
+  \path [line] (vnbase) |- (tex);%| vline to disable odd look in emacs
+  %
+  % 3rd level nodes
+  \node [description, left of=crd, node distance=5cm] (wichtigcrd)
+   {Alle .crd files};
+  \node [description, left of=eps, node distance=5cm] (wichtigeps)
+   {Alle .eps files};
+  \node [virtualnode, left of=style, node distance=4cm] (vnstyle) {};
+  \node [stex, left of=vnstyle, node distance=5cm] (pretex) {preambel.tex};
+  \node [stex, below of=pretex] (vartex) {variable.tex};
+  \node [ltex, below of=vartex] (adb) {Aufgaben\_Deckblatt.tex};
+  \node [ltex, below of=adb] (ddb) {Durchgerechnet\_Deckblatt.tex};
+  \node [ltex, below of=ddb] (ldb) {L\"{o}sungen\_Deckblatt.tex};
+  \node [sdir, below of=tex, node distance=5.5cm, shift=(left:2.5cm)] (adir)
+   {\bf Aufgaben};
+  \node [sdir, below of=adir] (ddir) {\bf Durchgerechnet};
+  \node [sdir, below of=ddir] (ldir) {\bf L\"{o}sungen};
+  \node [ldescription, left of=ddir, node distance=6cm] (wichtigadl)
+   {In diesen Ordnern hat jedes Beispiel ein eigenes .tex file:\\
+     Aufgabe\_xx.tex\\Durchgerechnet\_xx.tex\\L\"{o}sung\_xx.tex};
+  % 3rd level edges
+  \path [line] (crd) -- (wichtigcrd);
+  \path [line] (eps) -- (wichtigeps);
+  \path [line] (style) -- (pretex);
+  \path [line] (vnstyle) |- (vartex);
+  \path [line] (vnstyle) |- (adb);
+  \path [line] (vnstyle) |- (ddb);
+  \path [line] (vnstyle) |- (ldb);
+  \path [line] (tex) |- (adir);
+  \path [line] (tex) |- (ddir);
+  \path [line] (tex) |- (ldir);
+  \path [line] (adir) -| (wichtigadl);
+  \path [line] (ddir) -- (wichtigadl);
+  \path [line] (ldir) -| (wichtigadl);%| vline to disable odd look in emacs
 \end{tikzpicture}
+\caption{Übersicht zum Ordner \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik}.}
+\label{fig:ueblaett}
+\end{figure}
 
 
 %\begin{landscape}

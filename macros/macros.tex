@@ -2,6 +2,7 @@
 %%% PACKAGE REQUIREMENTS
 \RequirePackage{tikz}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% TIKZ MACROS
 
@@ -42,12 +43,16 @@ text centered, text width = 6cm, draw=black, fill=yellow!15]
 
 \tikzstyle{filemisc} =
 [rectangle, rounded corners, minimum width = 1cm, minimum height = 1cm, 
-text centered, text width = 4cm, draw=black, fill=red!15]
+text centered, text width = 4cm, draw=black, fill=white!15]
 
-% descriptive node
+% descriptive nodes
 \tikzstyle{description} = 
 [rectangle, rounded corners, minimum width = 2cm, minimum height = 1cm, 
 text width = 3cm, text centered, draw=black, fill=green!15]
+
+\tikzstyle{ldescription} = 
+[rectangle, rounded corners, minimum width = 2cm, minimum height = 1cm, 
+text width = 5cm, text centered, draw=black, fill=green!15]
 
 % descriptive node about obsoleteness
 \tikzstyle{obsolete} = 
@@ -57,16 +62,14 @@ text width = 2cm, draw=white]
 % line
 \tikzstyle{line} = [draw, -latex']
 
-% tikz styles
-%\tikzstyle{lpro} = 
-% [rectangle, minimum width = 3cm, minimum height = 1cm, text centered,
-% text width = 6.5cm, draw=black, fill=blue!15]
 
-%\tikzstyle{llpro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-%text centered, text width = 7.5cm, draw=black, fill=blue!15]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TEXT-RELATED MACROS
 
-%\tikzstyle{spro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-%text centered, text width = 4cm, draw=black, fill=blue!15]
+% tyewriter-like text
+\newcommand{\twrite}[1]{$\mathtt{#1}$}
 
-%\tikzstyle{sspro} = [rectangle, minimum width = 3cm, minimum height = 1cm, 
-%text centered, text width = 3cm, draw=black, fill=blue!15]
+% figure reference
+\newcommand{\figref}[1]{Abbildung [\ref{#1}]}
+
+%EOF
