@@ -252,7 +252,7 @@ Formelsammlung dargestellt. Wie wichtigsten Ordner und Dateien sind:
     Ordner, dient zur Ablage aller {\tt eps}-Dateien, damit nur Pfad angegeben
     werden muss, um auf alle Grafiken zugreifen zu können.
   \item \twrite{Bilder\_Corel\_Draw:} Hier befinden sich alle Grafiken, die
-    in der Formelsammlung zu Anwendung kommen im Format {\tt crd}. 
+    in der Formelsammlung zu Anwendung kommen im Format {\tt cdr}. 
     Grundsätzlich sind die Dateien in Unterordnern zu den einzelnen Kapiteln
     angeordnet. Es sind zwar auch einige files außerhalb der Kapitel zu finden,
     jedoch werden diese in der Formelsammlung selbst nie gebraucht.
@@ -308,7 +308,7 @@ Formelsammlung dargestellt. Wie wichtigsten Ordner und Dateien sind:
   \node [description, right of=eps, node distance=5cm] (wichtigeps)
    {Sammlung aller Bilder in eps};
   \node [description, right of=cd, node distance=5cm] (wichtigcd)
-   {In Kapitel gegliederte crd-files};
+   {In Kapitel gegliederte cdr-files};
   \node [description, right of=content, node distance=5cm] (wichtigcontent)
    {.tex files (Kapitel, Deckblatt)};
   \node [obsolete, right of=schwingg, node distance=5cm] (unschwingg)
@@ -342,7 +342,7 @@ die Übungsaufgaben, die Lösungen dazu und alle durchgerechneten Beispiele
 verwaltet. Im Gegensatz zur Formelsammlung gibt es keine Unterordner der
 einzelnen Studienjahre, es werden ledigilich die {\tt .pdf}-Dokumente der 
 Vorjahre archiviert (aber nicht die gesamte Masse an {\tt .tex}, {\tt .eps} und 
-{\tt .crd} Dateien). Die wichtigsten Ordner und Dateien werden nun abermals kurz
+{\tt .cdr} Dateien). Die wichtigsten Ordner und Dateien werden nun abermals kurz
 kommentiert.
 
 \begin{itemize}
@@ -364,9 +364,11 @@ kommentiert.
     {\bf aller drei} übungsbezogenen Dokumente (d.h. Angaben, Durchgerechnete
     {\bf und} Lösungen). Der Inhalt wird in \twrite{Aufgaben.pdf} exportiert
     und die genaue Funktion im zweiten Kapitel erklärt.
-  \item \twrite{Basisdaten/crd:} Alle {\tt .crd}-files. Es gibt hier keine
+  \item \twrite{Basisdaten/crd:} Alle {\tt .cdr}-files. Es gibt hier keine
     Unterteilung in Kapitel oder Unterscheidung zwischen Angaben,
-    Durchgerechnete oder Lösungen.
+    Durchgerechnete oder Lösungen. Um Verwirrung auszuschließen, wird explizit
+    darauf verwiesen dass die Dateiendung von Corel Draw {\tt .cdr} lautet, der
+    Ordner aber \twrite{crd} heißt.
   \item \twrite{Basisdaten/eps:} Alle {\tt .eps}-files. Es gibt hier keine
     Unterteilung in Kapitel oder Unterscheidung zwischen Angaben,
     Durchgerechnete oder Lösungen.
@@ -445,7 +447,7 @@ kommentiert.
   %
   % 3rd level nodes
   \node [description, left of=crd, node distance=5cm] (wichtigcrd)
-   {Alle .crd files};
+   {Alle .cdr files};
   \node [description, left of=eps, node distance=5cm] (wichtigeps)
    {Alle .eps files};
   \node [virtualnode, left of=style, node distance=4cm] (vnstyle) {};
