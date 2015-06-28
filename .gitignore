@@ -2,6 +2,6 @@
 *.toc
 *.log
 *.out
-*.pdf
 *.el
 /auto
+ta_guide.pdf
