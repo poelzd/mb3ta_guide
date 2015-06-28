@@ -1,5 +1,5 @@
 % chapter 1 : structure
-\chapter{Struktur}
+\chapter{Ordnerstruktur}
 
 In diesem Kapitel wird die Ordner- und Datenstruktur erläutert, die dem Skriptum
 und der Übungssammlung zugrunde liegt.
@@ -104,10 +104,10 @@ die in der Abbildung vorkommenden Ordner eingegangen.
 
 \begin{itemize}
   \item \twrite{Formelsammlung\_Dynamik:} In diesem Ordner befindet sich das
-    Skriptum (welches nun als \glqq{}Vorlesungsbehelf\grqq{} bekannt ist, früher
+    Skriptum (welches nun als bekannt ist, früher
     aber \glqq{}Formelsammlung\grqq{} hieß). Im Folgenden wird noch genauer
     darauf eingegangen.
-  \item \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik:} Hier sind alle Dateien
+  \item \twrite{\"{U}bungsbl\"{a}tter\_Dynamik:} Hier sind alle Dateien
     zu den Angaben der Übungen, der Lösungen und der durchgerechneten Beispiele.
     Etwas später wird ebenfalls noch genauer darauf eingegangen.
   \item \twrite{LV\_Organisation/Archiv:} In diesem Ordner sind primär die
@@ -269,7 +269,7 @@ Formelsammlung dargestellt. Wie wichtigsten Ordner und Dateien sind:
     Wofür diese Dateien zuständig sind, wird im nächsten Kapitel skizziert.
   \item \twrite{Vorlesungsbehelf\_Mechanik\_B3.tex:} Das \LaTeX-file zur
     Erstellung der Formelsammlung. Darin werden das Deckblatt und die Kapitel
-    kompiliert und als \twrite{Vorlesungsbehelf\_Mechanik\_B3.pdf}
+    kompiliert und als \\\twrite{Vorlesungsbehelf\_Mechanik\_B3.pdf}
     exportiert. Die genauere Funktionsweise wird im nächsten Kapitel erklärt.
 \end{itemize}
 
@@ -335,7 +335,7 @@ Formelsammlung dargestellt. Wie wichtigsten Ordner und Dateien sind:
 \label{fig:fsakt}
 \end{figure}
 
-\section{Ordner \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik}}
+\section{Ordner \twrite{\"{U}bungsbl\"{a}tter\_Dynamik}}
 
 Wie in \figref{fig:ueblaett} gut erkennbar ist, werden hier alle Daten für
 die Übungsaufgaben, die Lösungen dazu und alle durchgerechneten Beispiele
@@ -345,12 +345,11 @@ Vorjahre archiviert (aber nicht die gesamte Masse an {\tt .tex}, {\tt .eps} und
 {\tt .crd} Dateien). Die wichtigsten Ordner und Dateien werden nun abermals kurz
 kommentiert.
 
-\newpage
 \begin{itemize}
   \item \twrite{Aktuelle\_Lehrveranstaltung:} Dieser Ordner beinhaltet im
     Wesentlichen die drei Dateien \twrite{Aufgaben\_WSyyzz.tex},
     \twrite{Durchgerechnet\_WSyyzz.tex} und 
-    \twrite{L\ddot{o}sungen\_WSyyzz.tex}. Diese Dateien bestimmen, welche
+    \twrite{L\"{o}sungen\_WSyyzz.tex}. Diese Dateien bestimmen, welche
     Aufgaben / durchgerechnete Beispiele / Lösungen in den finalen
     {\tt .pdf}-Dokumenten aufscheinen. Am Ende des Sommersemester werden diese
     drei files kopiert und mit den Jahreszahlen des kommenden Studienjahres
@@ -477,11 +476,8 @@ kommentiert.
   \path [line] (ddir) -- (wichtigadl);
   \path [line] (ldir) -| (wichtigadl);%| vline to disable odd look in emacs
 \end{tikzpicture}
-\caption{Übersicht zum Ordner \twrite{\ddot{U}bungsbl\ddot{a}tter\_Dynamik}.}
+\caption{Übersicht zum Ordner \twrite{\"{U}bungsbl\"{a}tter\_Dynamik}.}
 \label{fig:ueblaett}
 \end{figure}
 
-
-%\begin{landscape}
-%Test.
-%\end{landscape}
+%EOF

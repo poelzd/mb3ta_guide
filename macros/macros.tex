@@ -67,9 +67,21 @@ text width = 2cm, draw=white]
 %%% TEXT-RELATED MACROS
 
 % tyewriter-like text
-\newcommand{\twrite}[1]{$\mathtt{#1}$}
+\newcommand{\twrite}[1]{\texttt{#1}}
+
+% tex-code-like text
+\newcommand{\texcode}[1]{\textsf{#1}}
 
 % figure reference
 \newcommand{\figref}[1]{Abbildung [\ref{#1}]}
+
+% replace tyepwriter-command
+\renewcommand{\tt}{\normalfont\ttfamily}
+
+% replace bf-command
+\renewcommand{\bf}{\normalfont\bfseries}
+
+% replace it-command
+\renewcommand{\it}{\normalfont\itshape}
 
 %EOF

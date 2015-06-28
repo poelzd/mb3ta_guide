@@ -2,8 +2,10 @@
 % dynamics at AM:BM.
 %
 % Note that this file as well as the title page are derived from documents
-% handed out by Samir Omerovic of the Institute of Structural Analysis at
+% handed out by Samir Omerovic of the Institute of Structural Analysis of
 % TU Graz.  
+%
+% This project is version-controlled by git.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[
@@ -65,7 +67,7 @@ openright,          % open chapter on right hand side
 \usepackage{siunitx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-\usepackage{pdflscape}
+\usepackage{tabularx}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,12 +84,15 @@ openright,          % open chapter on right hand side
 \setlength{\footskip}{1.5cm}
 
 \pagestyle{scrheadings}
-\setheadsepline{.4pt}
+% disable header line
+%\setheadsepline{.4pt}
 \automark[section]{chapter}
 \clearscrheadfoot
 
-\ohead[]{\footnotesize{\headmark}}
-\ifoot{\footnotesize{Einf\"{u}hrung f\"{u}r StudienassistentInnen der Dynamik}}
+% disable header
+%\ohead[]{\footnotesize{\headmark}}
+\ifoot{\footnotesize{Einf\"{u}hrung f\"{u}r StudienassistentInnen der Dynamik
+  am AM:BM}}
 \ofoot[\footnotesize{\pagemark}]{\footnotesize{\pagemark}}
 
 \addtokomafont{caption}{\small}
@@ -121,16 +126,19 @@ openright,          % open chapter on right hand side
 \setcounter{page}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% INCLUDE CONTENT $$$$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% INCLUDE CONTENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \include{./texs/0_structure}
 %
-%\include{./texs/1_latex}
+\include{./texs/1_latex}
 %
-%\include{./texs/2_tc}
+\include{./texs/2_cd}
 %
+\include{./texs/3_tc}
+%
+\include{./texs/4_misc}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
-
+%EOF
