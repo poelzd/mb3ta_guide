@@ -2,7 +2,7 @@
 \chapter{Teach Center}
 
 Auf der offiziellen Seite des Teach Centers bietet die TU Graz einige Tutorials 
-an:\linebreak\url{\tctugraz}\linebreak Viele der Möglichkeiten des TCs
+an:\linebreak\url{\tctugraz}\linebreak Viele der Möglichkeiten des TC
 werden im Rahmen der Lehrveranstaltung aber nicht benötigt (z.B. Foren,
 Umfragen, etc.), weshalb hier die wirklich gebrauchten Funktionen nochmals
 skizziert werden.
@@ -20,36 +20,36 @@ Es gibt eine eige Gruppen für {\tt Mechanik B3},
 Brett von {\tt Dynamik VT} gestellt, so muss sie für alle anderen Gruppen
 kopiert werden. Analog verhält es sich mit den Unterlagen: Skriptum und
 Übungsblätter müssen in alle TC-Gruppen separat hochgeladen werden (natürlich
-müssen übungszogene Inhalte nicht in die {\tt Mechanik - Dynamik (UE)}
+müssen übungszogene Inhalte nicht in {\tt Mechanik - Dynamik (VO)}
 gestellt werden). Die einzige Ausnahme hierbei ist die Anmeldung zur
 Übungsblattabgabe, welche nur ein einiziges mal in der Gruppe 
 {\tt Baumechanik 3 (Mechanik B3)} erstellt werden muss. Damit aber alle
 Studierenden wissen, wo sie sich anzumelden haben, muss in den anderen Gruppen
-die Anmeldung verlinkt werden. Wie man hier vorgeht wird noch im Part zur
-Anmeldung zur Übungsblattabgabe detailliert.
+die Anmeldung verlinkt werden. Wie hier vorgegangen werden sollte, wird im Part
+zur Anmeldung zur Übungsblattabgabe detailliert.
 
 \section{Allgemeine Funktionen}
 
 Die allgemeinen Funktionen finden sich, wie in \figref{fig:general} dargestellt,
-rechts oben, wobei die einzig wichtigeen Punkt \twrite{Administration} und
+rechts oben, wobei die einzig wichtigen Punkte \twrite{Administration} und
 \twrite{Benutzer} sind.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=.75\textwidth]{3_general.pdf}
-  \caption{ Die allgemeinen Funktionen. In der ersten Zeile ist nur 
-    \twrite{Administration} und in der zweiten nur \twrite{Benutzer} relevant.}
+  \includegraphics[width=.84\textwidth]{3_general.pdf}
+  \caption{ Die allgemeinen Funktionen. In der ersten Zeile ist vor allem 
+    \twrite{Administration} und in der zweiten \twrite{Benutzer} relevant.}
   \label{fig:general}
 \end{center}
 \end{figure}
 
-Im Folgenden gehen wir auf die wichtigsten Funktionen von
-\twrite{Administration} ein.
+%Im Folgenden gehen wir auf die wichtigsten Funktionen von
+%\twrite{Administration} ein.
 
 \subsection{Administration - Parameter}
 
-Hier können neue \glqq{}Course Tutors\grqq{}, also Studienassistenten mit
-Schreibrechten in der TC Gruppe, hinzugefügt werden. Um dies zu tun, muss in
+Hier können neue \glqq{}Course Tutors\grqq{}, also StudienassistentInnen mit
+Schreibrechten, der TC Gruppe hinzugefügt werden. Um dies zu tun, muss in
 der Zeile \twrite{Course Tutors} - dargestellt in \figref{fig:params} - 
 die TUG-ID des Nutzers hinzugefügt werden, wobei die einzelnen IDs durch ein 
 Semikolon getrennt sind. Danach muss die neue Liste unten mit dem Button 
@@ -84,7 +84,7 @@ eingetragenen Studierende haben Zugriff zur Gruppe.
 
 \subsubsection{Exportierung Teilnehmerliste}
 
-Um eine Teilnehmerliste aus dem Teach Center in Excel zu exportieren müssen
+Um eine Teilnehmerliste aus dem Teach Center in Excel zu exportieren, müssen
 folgende Schritte unternommen werden (\figref{fig:export} stellt diesen
 Prozess grafisch dar):
 
@@ -95,10 +95,10 @@ Prozess grafisch dar):
 \item Button \twrite{Exportieren} und Button \twrite{CSV exportieren}
 \item Im Fenster {\bf ctrl-a} (alles auswählen) und {\bf ctrl-c} (kopieren)
   drücken.
-\item Im Excel {\bf ctrl-v} (einfügen) drücken. Darauf folgt ein Dialog zur
+\item In Excel {\bf ctrl-v} (einfügen) drücken. Darauf folgt ein Dialog zur
   Importierung: Hier muss als Trennsymbol (\glqq{}separator symbol\grqq{})
-  der Semikolon gewählt werden. In der unteren Vorschau kann man dann erkennen,
-  das die Daten in drei Spalten getrennt werden.
+  das Semikolon gewählt werden. In der Vorschau unten kann man dann erkennen,
+  dass die Daten in drei Spalten getrennt werden.
 \end{enumerate}
 
 \begin{figure}[htbp]
@@ -113,40 +113,43 @@ Prozess grafisch dar):
 
 Manchmal kommt es vor, dass einzelne Studierende zur Lehrveranstaltung
 nachgemeldet werden. Diese haben standardmäßig keine Zugriffsrechte auf das
-TC, und müssen somit manuell hinzugefügt werden.
+TC und müssen somit manuell hinzugefügt werden.
 
 Wichtig ist hierbei Folgendes: Das 
-\glqq{}Hinzufügen von Studierenden ins TC\grqq{} ist Nichts anderes, als eine 
-Synchronisierung der Liste von Studenten die im TUGonline zur Lehrveranstaltung 
-angemeldet sind, d.h. man muss nicht einzelne Studierende per Hand einfügen, 
-sondern führt einfach einen {\bf refresh} der Liste aus.
+\glqq{}Hinzufügen von Studierenden ins TC\grqq{} ist Nichts anderes als eine 
+Synchronisierung mit der Liste jener Studentierenden die im TUGonline zur 
+Lehrveranstaltung angemeldet sind. Folglich muss man nicht einzelne Studierende
+per Hand einfügen, sondern führt einfach einen {\bf refresh} der Liste im TC 
+aus.
 
-Um die Liste zu aktualisieren, muss folgendes gemacht werden.
+Um die Liste zu aktualisieren, muss Folgendes gemacht werden.
 \begin{enumerate}
 \item Button \twrite{Benutzer}
 \item Button \twrite{Bearbeiten}
 \item Button \twrite{Import}, siehe \figref{fig:import}
 \end{enumerate}
 
-Folgendes ist essentiell: Dieser Prozess kopiert die aktuelle Liste der zur
+{\bf Wichtig:} Dieser Prozess kopiert die aktuelle Liste der zur
 Lehrveranstaltung gemeldeten Studierenden des TUGonline und überschreibt die
-TC-Liste. Um einen Studierenden also wirklich hinzufügen zu können, muss er zur
-Lehveranstaltung gemeldet sein. Studienassistenten haben aber keine Rechte, um
-Studierende im TUGonline nachzumelden, und somit muss der Studierende zuerst
+TC-Liste. Um einen Studierenden also wirklich hinzufügen zu können, muss er/sie
+zur Lehveranstaltung gemeldet sein. Studienassistenten haben aber keine Rechte,
+um Studierende im TUGonline nachzumelden, und somit muss der Studierende zuerst
 vom Sekretariat im TUGonline  nachgemeldet werden, bevor man ihn/sie ins TC
 importieren kann.
 
 \begin{figure}[htbp]
-  \includegraphics[width=\textwidth]{3_import.pdf}
+  \begin{center}
+  \includegraphics[width=.84\textwidth]{3_import.pdf}
   \caption{ Import der Liste der Studierenden.}
   \label{fig:import}
+  \end{center}
 \end{figure}
 
 \section{Schwarzes Brett}
 
 Hier werden aktuelle Informationen bzw. Ankündigungen hineingeschrieben. Um
-einen neuen Beitrag zu erstellen bzw. einen bestehenden zu editieren, muss
-folgendes gemacht werden (siehe dazu \figref{fig:sb}):
+einen neuen Beitrag zu erstellen bzw. einen bestehenden zu editieren, müssen
+folgende Schritte beachtet werden (siehe dazu \figref{fig:sb}):
 \begin{enumerate}
 \item Button \twrite{Bearbeiten}
 \item Button \twrite{Neu} oder \twrite{Edit}
@@ -185,19 +188,19 @@ hochgeladen werden. Der Prozess ist ähnlich wie beim \twrite{Schwarzen Brett}:
 
 Hier sind die {\tt .pdf}-Dateien des Vorlesungsbehelfs und der Angabe der
 Übungsblätter hochzuladen. Dies funktioniert im Endeffekt gleich wie bei
-\twrite{Administratives}
+\twrite{Administratives}:
 \begin{enumerate}
 \item Button \twrite{Bearbeiten}
 \item Links: \twrite{Neues File} $\to$ \twrite{Browse}, Datei auswählen
   $\to$ \twrite{Ok}
-\item Rechts: Mit \twrite{Bearbeiten} bestehende Files editieren/löschen
+\item Rechts: Mit \twrite{Bearbeiten} bestehende files editieren/löschen
 \end{enumerate}
 
 
 \section{Lehr- und Lernhilfen}
 
-Hier müssen einerseits die {\tt .pdf}-Files des Durchgerechneten Beispiele und
-der Lösungen hochgeladen werde, und andererseits die Anmeldung zur 
+Hier müssen einerseits die {\tt .pdf}-Files der durchgerechneten Beispiele und
+der Lösungen hochgeladen werden und andererseits die Anmeldung zur 
 Übungsblattabgabe erstellt werden. Ersteres funktioniert genau wie bei
 \twrite{Unterlagen}.
 
@@ -214,13 +217,13 @@ erstellt:
 Wie bereits zu Beginn dieses Kapitels angemerkt, muss diese Anmeldung nur in
 der Gruppe {\tt Mechanik B3} erstellt werden, da alle anderen Studierenden
 darauf Zugriff haben. Um es einfacher zu gestalten, die Anmeldung
-zu finden, sollte in den TC-Gruppe {\tt Dynamik VT} und 
+zu finden, sollte in den TC-Gruppen {\tt Dynamik VT} und 
 {\tt Mechanik-Dynamik (UE)} ein kurzer Eintrag am Schwarzen Brett erstellt 
 werden. In diesem sind die Studierenden darauf zu hinzuweisen, dass die 
 Anmeldung zur Übungsblattabgabe in Kürze beginnen wird/gerade begonnen hat und 
 diese zu verlinken.
 
-Der Link kann durch einen anchor so erstellt werden:\\
+Der Link kann durch einen anchor erstellt werden:\\
 {\bf
 <a href= \grqq{}LINK\grqq{}>TeachCenter\_MB3</a>
 }
@@ -230,9 +233,9 @@ man in der Gruppen-Einteilung ist. Zum Vergleich lautete dieser Link
 im Studienjahr 2014/15:\\
 {\bf http://tugtc.tugraz.at/wbtmaster/appointment.htm?261253 }
 
-Der Name zwischen {\bf <a>} und  {\bf </a>} kann natürlich beliebig
-angepasst werden. Weiters ist es noch sinnvoll, den ganzen Link auch nochmal
-in textlicher Form in den Eintrag am Schwarzen Brett zu inkludieren, zumal
+Die Bezeichnung zwischen {\bf <a>} und  {\bf </a>} kann natürlich beliebig
+angepasst werden. Weiters ist es sinnvoll, den ganzen Link auch
+in textlicher Form im Eintrag am Schwarzen Brett zu inkludieren, zumal
 der anchor bei einigen Browser nicht funktionieren könnte.
 
 
@@ -276,9 +279,11 @@ Unter \twrite{Tools} $\to$ \twrite{Einstellungen}
 \end{itemize}
 
 \begin{figure}[htbp]
-  \includegraphics[width=\textwidth]{3_toolspref.pdf}
+  \begin{center}
+  \includegraphics[width=.94\textwidth]{3_toolspref.pdf}
   \caption{ Tools - Einstellungen.}
   \label{fig:toolspref}
+  \end{center}
 \end{figure}
 
 \subsubsection{Tools - New Group}
@@ -298,14 +303,16 @@ Unter \twrite{Tools} $\to$ \twrite{New Group}
   So viele Gruppen wie benötigt. Dies ist beispielsweise aus dem Stundenplan 
   ersichtlich.
 \item \twrite{Registration till-:}\\
-  Hier wird der Endzeitpunkt der Anmeldung für alle Gruppen fixiert. (Der
-  Beginnzeitpunkt wurde vorher bereits in den Einstellungen definiert).  
+  Hier wird der Endzeitpunkt der Anmeldung für alle Gruppen fixiert, wobei der
+  Beginnzeitpunkt bereits in den Einstellungen definiert wurde.  
 \end{itemize}
 
 \begin{figure}[htbp]
-  \includegraphics[width=\textwidth]{3_toolsnew.pdf}
+  \begin{center}
+  \includegraphics[width=.94\textwidth]{3_toolsnew.pdf}
   \caption{ Tools - New Group.}
   \label{fig:toolsnew}
+  \end{center}
 \end{figure}
 
 Somit werden alle Gruppen entsprechend der Vorlage erstellt. Nun muss noch jede
@@ -314,7 +321,7 @@ wird.
 
 \subsubsection{Gruppe editieren}
 
-Um eine Gruppe zu bearbeiten klickt man in der Liste aller Gruppen den Titel
+Um eine Gruppe zu bearbeiten, klickt man in der Liste aller Gruppen den Titel
 der gewünschten Gruppe, der nach der Vorlage 
 \glqq{}Termin: Mi 07. Jänner 2015 {\bf Grp. 1; 08:15 - 09:00}\grqq{} lautet.
 Darauf öffnet sich ein Fenster, in dem man durch Klick auf \twrite{Bearbeiten}
@@ -336,15 +343,15 @@ noch, aber niemand kann sich anmelden).
 \newpage
 \subsubsection{Exportieren}
 
-Nach Ende der Anmeldungsfrist, muss die Teilnehmerliste jeder Gruppe exportiert
-werden. Dieser Prozess wird nun beschrieben:
+Nach Ende der Anmeldefrist muss die Teilnehmerliste jeder Gruppe exportiert
+werden. Dieser Prozess wird im Folgenden beschrieben:
 \begin{enumerate}
   \item \twrite{Tools} $\to$ \twrite{Exportieren} 
   \item \twrite{All Groups} $\to$ \twrite{CSV} (siehe \figref{fig:exportall})
   \item Im Fenster \twrite{Copy/Paste} {\bf ctrl-a} (alles auswählen) und 
     {\bf ctrl-c} (kopieren) drücken (siehe \figref{fig:copypaste}).
  \item Den Inhalt in einen Texteditor (z.B. \twrite{notepad}, \twrite{notepad++}
-    oder \twrite{emacs} kopieren.
+    oder \twrite{emacs}) kopieren.
  \item Alle HTML-tags entfernen:
     \begin{itemize}
       \item Ersetze: <br> durch \twrite{void}
@@ -358,7 +365,7 @@ werden. Dieser Prozess wird nun beschrieben:
     dann mit {\bf ctrl-v} in Excel einfügen.
   \item Trennsymbol (\glqq{}separator symbol\grqq{}): Hier darf nur das
     Semikolon verwendet werden. Das Leerzeichen (Space) darf nicht verwendet
-    werden, da sonst die Aufteilung der Spalten keinen Sinn ergibt.
+    werden, da sonst die Aufteilung der Spalten keinen Sinn macht.
 \end{enumerate}
 
 \footnotetext[2]{Das Zeichen \grqq{} erhählt man auf deutschen Keyboards durch 
