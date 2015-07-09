@@ -145,6 +145,19 @@ importieren kann.
   \end{center}
 \end{figure}
 
+{\bf Anmerkung:} Unter \twrite{Administration} $\to$ \twrite{Spezifische Tools}
+(ganz rechts) $\to$ \twrite{Benutzer} kann die Liste der Studierenden ebenfalls
+importiert werden. Zusätzlich kann der Import von manuell auf automatisch 
+umgestellt werden. Diese Option findet sich in der ersten Zeile, die in etwa
+so aussieht:\newline
+\texcode{Mechanik B3 [restricted] [Import is Manual]}
+
+Wobei \texcode{Mechanik B3} den Kursnamen der aktuell betrachteten TC Gruppe
+darstellt. Durch Klicken auf \texcode{[Import is Manual]} kann auf
+\texcode{[Import is Automatic]} umgestellt werden. Es wurde aber bisher
+gewünscht, dass der Import {\bf manuell} bleibt, d.h. vor Umstellung auf 
+automatischen Import ist in jedem Fall nachzufragen.
+
 \section{Schwarzes Brett}
 
 Hier werden aktuelle Informationen bzw. Ankündigungen hineingeschrieben. Um
@@ -224,17 +237,17 @@ Anmeldung zur Übungsblattabgabe in Kürze beginnen wird/gerade begonnen hat und
 diese zu verlinken.
 
 Der Link kann durch einen anchor erstellt werden:\\
-{\bf
+\texcode{
 <a href= \grqq{}LINK\grqq{}>TeachCenter\_MB3</a>
 }
 
-wobei \textbf{LINK} genau jene URL ist, die im Browser angezeigt wird, wenn
+wobei \texcode{LINK} genau jene URL ist, die im Browser angezeigt wird, wenn
 man in der Gruppen-Einteilung ist. Zum Vergleich lautete dieser Link
 im Studienjahr 2014/15:\\
-{\bf http://tugtc.tugraz.at/wbtmaster/appointment.htm?261253 }
+\texcode{ http://tugtc.tugraz.at/wbtmaster/appointment.htm?261253 }
 
-Die Bezeichnung zwischen {\bf <a>} und  {\bf </a>} kann natürlich beliebig
-angepasst werden. Weiters ist es sinnvoll, den ganzen Link auch
+Die Bezeichnung zwischen \texcode{<a>} und \texcode{</a>} kann natürlich 
+beliebig angepasst werden. Weiters ist es sinnvoll, den ganzen Link auch
 in textlicher Form im Eintrag am Schwarzen Brett zu inkludieren, zumal
 der anchor bei einigen Browser nicht funktionieren könnte.
 
@@ -293,7 +306,8 @@ Unter \twrite{Tools} $\to$ \twrite{New Group}
 \begin{itemize}
 \item \twrite{Titel:} 
   Hier sollte folgender Vorlagentext hineingeschrieben werden:\\
-  {\bf Termin: Mi 07. Jänner 2015<br><strong>Grp. 1; 08:15 - 09:00</strong>}\\
+  \texcode{
+    Termin: Mi 07. Jänner 2015<br><strong>Grp. 1; 08:15 - 09:00</strong> }\\
   Die einzelnen Zeiten und Gruppennummern müssen dann noch manuell eingetragen
   werden, aber die richtigen Kommandos für das Layout sind damit schon mal
   aufgesetzt (\twrite{<br>} sorgt für einen Zeilenumbruch und der Text
