@@ -5,6 +5,8 @@
 % handed out by Samir Omerovic of the Institute of Structural Analysis of
 % TU Graz.  
 %
+% This project is authored by Dominik Poelz and Daniel Schoellhammer.
+%
 % This project is version-controlled by git.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,18 +113,18 @@ openright,          % open chapter on right hand side
 %% DOCUMENT
 \begin{document}
 
-% big roman page numbers
+%% big roman page numbers
 \pagenumbering{Roman}                
 
-% include the title
+%% include the title
 \include{./texs/title} 
-% include the preface
-\include{./texs/preface}
-% include TOC
+%% include the preface
+% \include{./texs/preface}
+%% include TOC
 \tableofcontents
 \cleardoubleplainpage
 
-% set pagenumbering to arabic and reset counter
+%% set pagenumbering to arabic and reset counter
 \pagenumbering{arabic}
 \setcounter{page}{1}
 

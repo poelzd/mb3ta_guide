@@ -1,11 +1,25 @@
 % chapter 2 : tex-based documents
 \chapter{Einf\"{u}hrung zu den \LaTeX-Dokumenten}
 
-Bevor die wichtigsten {\tt .tex}-files besprochen werden, wird noch auf einige
-grundlegende Aspekte hingewiesen:
+Bevor die wichtigsten {\tt .tex}-files besprochen werden, wird noch auf sei noch
+Folgendes angemeerkt:
 
-\begin{itemize}
-  \item Es wird ein gewisses Grundwissen in \LaTeX{} vorausgesetzt; man muss
+Der wichtigste Befehl beim Arbeiten mit dem Vorlesungsbehelf und den
+Übungsblättern ist {\bf copy-and-paste}. Um eine neue Übungsaufgabe zu
+erstellen, kopiert man eine bestehende (die ähnlich aussieht), benennt sie
+entsprechend um und passt diese Datei an. Muss man eine neue Formel bzw.
+Gleichung schreiben, so sucht man die notwendigen Sonderzeichen und Terme in
+den bereits vorhandenen Gleichungen. Dies erspart nicht nur Arbeit, sondern
+stellt auch sicher, dass die Notation konsistent ist (z.B. dass das Symbol für
+einen Vektor immer das gleiche Makro ist und nicht manuell nachgebastelt wird). 
+Es kommt eigentlich sehr selten vor, dass gänzlich neue Konstrukte gebraucht
+werden, die nicht durch geschickten Einsatz von copy-and-paste erzeugt werden
+können.\newline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% comment about TeX being important is too jerky and misplaced
+\begin{comment}
+    Es wird ein gewisses Grundwissen in \LaTeX{} vorausgesetzt; man muss
     beileibe kein Experte sein, aber man sollte die basics bereits beherrschen.
     Ziel des vorliegenden Kapitels ist es, die Handhabung der 
     einzelnen {\tt .tex}-Dokumente des Vorlesungsbehelfs und der Übungsblätter
@@ -19,26 +33,16 @@ grundlegende Aspekte hingewiesen:
     wird, sowieso jedwede herkömmliche Software zur Textverarbeitung schlägt,
     sollte das Erlernen von \LaTeX{} nicht als Zeitverschwendung, sondern als 
     Aneignung einer nützlichen Zusatzqualifikation angesehen werden.
-  \item Der wichtigste Befehl beim Arbeiten mit dem Vorlesungsbehelf und
-    den Übungsblättern ist {\bf copy-and-paste}. Um eine neue Übungsaufgabe zu
-    erstellen, kopiert man eine bestehende (die ähnlich aussieht), benennt sie
-    entsprechend um und passt diese Datei an. Muss man eine neue Formel
-    bzw. Gleichung schreiben, so sucht man die notwendigen Sonderzeichen und
-    Formelteile in den bereits vorhandenen Gleichungen. Dies erspart nicht nur 
-    Arbeit, sondern stellt auch sicher, dass die Notation konsistent ist 
-    (z.B. dass das Symbol für einen Vektor immer gleich aussieht). 
-    Es kommt eigentlich sehr selten vor, dass gänzlich neue Konstrukte 
-    gebraucht werden, die nicht durch geschickten Einsatz von copy-and-paste 
-    erzeugt werden können.\newline
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % comment about Corel Draw not needed
-    \begin{comment}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% comment about Corel Draw not needed
+\begin{comment}
     Ähnliches gilt beim Arbeiten mit {\tt Corel-Draw}: Muss ein neues Bild
     erstellt werden, so kopiert man sich am besten die Pfeile, Blöcke, Federn
     und sonstige Symbole aus bestehenden Bildern zusammen.
-    \end{comment}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{itemize}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Vorlesungsehelf (Formelsammlung)}
 
@@ -200,7 +204,7 @@ Deckblatt voneinander ab (der Wert \texcode{10} ist hierbei als
   & Fügt das Deckblatt ein, welches in \twrite{variable.tex} definiert wird.  
     \\\\
   % inhalt
-  \texcode{\textbackslash input\{content/0\_einleitung\}}
+  \texcode{\textbackslash myInhalt}
   & Fügt den Inhalt ein, welcher in \twrite{variable.tex} definiert wird.\\
   % end
   \texcode{\textbackslash end \{document\}}
